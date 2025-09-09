@@ -1,21 +1,16 @@
-MIT License
+Licencia para RAAOL
 
-Copyright (c) 2025 acalvopi
+Copyright (c) 2025 Antonio Calvo
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Se concede permiso a cualquier persona para obtener una copia del software y la documentación asociada (el "Software"), únicamente con los siguientes fines:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+- Usar el Software para fines personales y no comerciales, incluyendo su autohospedaje bajo responsabilidad del usuario.
+- Contribuir al desarrollo del Software, incluyendo modificarlo y mejorarlo, siempre que las contribuciones mantengan esta licencia y se compartan bajo los mismos términos.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Queda prohibido el uso del Software para fines comerciales, de explotación o distribución que impliquen lucro sin autorización expresa del titular de los derechos.
+
+El aviso de copyright y esta licencia deben incluirse en todas las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITÁNDOSE A GARANTÍAS DE COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EL TITULAR DE LOS DERECHOS NO SERÁ RESPONSABLE POR NINGÚN DAÑO RESULTANTE DEL USO DEL SOFTWARE.
+
+Para cualquier uso comercial o diferente al permitido, contacte con acalvopi@alumnos.unex.es
