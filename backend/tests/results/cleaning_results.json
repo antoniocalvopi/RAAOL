@@ -1,0 +1,73 @@
+{
+    "summary": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "success_rate": 0.0
+    },
+    "details": [
+        {
+            "test": 1,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-barcelona-barcelona/barcelona-capital-549092916.htm",
+            "result": "❌ FAILED",
+            "mismatches": {
+                "titulo": {
+                    "expected": "Barcelona Capital",
+                    "actual": "Barcelona Capital0"
+                }
+            },
+            "errors": [
+                "Field 'titulo': expected 'Barcelona Capital', got 'Barcelona Capital0'"
+            ],
+            "feature_vector": {
+                "titulo": "Barcelona Capital0",
+                "precio": "1.750 €",
+                "descripcion": "Ref: PV1057. ALQUILER DE TEMPORADA. DISPONIBLE A PARTIR DE JUNIO DE 2025. PISO EN ALQUILER, IDEAL ESTUDIANTES O PROFESIONALES ACREDITADOS\r\n\r\nDESCRIPCIÓN: Piso de alquiler, en el Fortpienc Eixample (junto a l'Auditori i Estació del Nord), de 64 metros útiles (70 metros construidos), en buen estado, con ascensor. \r\n\r\nDISTRIBUCIÓN: \r\nDormitorios: 2 habitaciones dobles y un cuarto de trabajo/vestidor; equipados con ventiladores y calefacción, armarios roperos, mesita de noche y escritorio de estudio.\r\nSalón: Mediano, con salida a balcón a calle. Luminoso.\r\nCocina: Independiente, con gas de 4 fogones, horno, microondas, nevera.\r\nBaño: 1 baño completo con plato de ducha.\r\n\r\nEXTRAS: Calefacción individualizada eléctrica, ventiladores, suelos de gres.\r\n\r\nSERVICIOS INCLUIDOS: Los servicios incluidos son WiFi 300M, limpieza semanal de zonas comunes, mantenimiento del piso, menaje de cocina y sabanas y toallas. NO INCLUIDO: Suministros.\r\n\r\nTRANSPORTE Y COMUNICACIÓN: L1 Marina / L4 Bogatell, líneas de bus, TRAM.. . bien comunicado.\r\n\r\nLUGARES DE INTERÉS: Playas, l'Auditori, Casino de Barcelona, Razzmatazz, Parc de la Ciutadella, Vila Olímpica, Teatre Nacional de Catalunya.. .\r\n\r\nGASTOS: 2 meses de fianza, honorarios agencia\r\n\r\nEn cumplimiento de la Ley 12/2023 y la Ley 18/2007 informamos que:\r\nContrato temporal: no aplica la ley de regularización de alquileres.\r\nCondición del propietario de gran tenedor: NO\r\n\r\nIdeal para compartir estudiantes, profesionales sanitarios, funcionarios.. .\r\n\r\nLlame a BarnaFinc para concertar visita. [IW]",
+                "ubicacion": "Barcelona (Barcelona)",
+                "images": []
+            }
+        },
+        {
+            "test": 2,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-santiago-de-compostela-la_coruna/santiago-de-compostela-546773715.htm",
+            "result": "❌ FAILED",
+            "mismatches": {
+                "titulo": {
+                    "expected": "Santiago de Compostela",
+                    "actual": "Santiago de Compostela4"
+                }
+            },
+            "errors": [
+                "Field 'titulo': expected 'Santiago de Compostela', got 'Santiago de Compostela4'"
+            ],
+            "feature_vector": {
+                "titulo": "Santiago de Compostela4",
+                "precio": "850 €",
+                "descripcion": "Ref: 1865. Se alquila piso para el curso universitario o contrato anual. 🏡\nSituado en el Ensanche Compostelano, distribuido en 2 habitaciones completamente amuebladas, cocina completamente equipada con todo tipo de electrodomésticos, salón comedor y un baño completo.\n\nCalefacción y agua caliente de gasoil individual\n\nAscensor.\n\n\n\n\n\n\n\n\n\n # Armarios #",
+                "ubicacion": "Santiago de Compostela (A Coruña)",
+                "images": []
+            }
+        },
+        {
+            "test": 3,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-barcelona-barcelona/barcelona-capital-549244771.htm",
+            "result": "❌ FAILED",
+            "mismatches": {
+                "titulo": {
+                    "expected": "Barcelona Capital",
+                    "actual": "Barcelona Capital1"
+                }
+            },
+            "errors": [
+                "Field 'titulo': expected 'Barcelona Capital', got 'Barcelona Capital1'"
+            ],
+            "feature_vector": {
+                "titulo": "Barcelona Capital1",
+                "precio": "3.600 €",
+                "descripcion": "Ref: PV1078. DESCRIPCIÓN: Piso de alquiler, en la Vila de Gràcia (junto Vía Augusta, entre Plaça Gal·la Placídia y Avenida Diagonal), de 155 metros útiles (170 metros construidos), exterior, amueblado, con ascensor y servicio de conserjería. \r\n\r\nDISTRIBUCIÓN: \r\nDormitorios: 5 habitaciones dobles, de las que 4 son exteriores y 1 a patio interior; las habitaciones están equipadas con cama doble, armario ropero, mesitas de noche, y escritorio de estudio.\r\nSalón: Muy grande, exterior. Luminoso.\r\nCocina: Independiente, cerrada, muy espaciosa; 4 fogones, horno, microondas, nevera, lavadora.\r\nBaño: 2 baños independientes completos (ambos con plato de ducha).\r\n\r\nEXTRAS: Calefacción individualizada, radiadores en todas las estancias, suelos de gres\r\n\r\nSERVICIOS INCLUIDOS: Mantenimiento piso, WiFi, limpieza semanal zonas comunes / NO INCLUIDO: Suministros aparte.\r\n\r\nTRANSPORTE Y COMUNICACIÓN: L3-L5 Diagonal / FFCC Gràcia, líneas de bus.. . bien comunicado.\r\n\r\nLUGARES DE INTERÉS: Palau Robert, Jardinets de Gràcia, Mercat de la Llibertat, Vila de Gràcia, La Pedrera, Casa de les Punxes.. .\r\n\r\nGASTOS: 2 meses de fianza, honorarios agencia\r\n\r\nEn cumplimiento de la Ley 12/2023 y la Ley 18/2007 informamos que:\r\nContrato temporal: no aplica la ley de regularización de alquileres.\r\nCondición del propietario de gran tenedor: NO\r\n\r\nIdeal para compartir estudiantes, profesionales sanitarios, funcionarios.. .\r\n\r\nDisponible a partir del 1 de Julio de 2025. [IW]",
+                "ubicacion": "Barcelona (Barcelona)",
+                "images": []
+            }
+        }
+    ]
+}

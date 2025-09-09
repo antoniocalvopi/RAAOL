@@ -1,0 +1,40 @@
+{
+    "summary": {
+        "total": 2,
+        "passed": 2,
+        "success_rate": 100.0
+    },
+    "details": [
+        {
+            "method": "embeddings",
+            "result": [
+                0.2,
+                [
+                    {
+                        "poi": "Café Melo's",
+                        "similarity": 0.5142747759819031
+                    }
+                ],
+                "Madrid",
+                {
+                    "city": "Madrid",
+                    "suburb": "Malasaña"
+                }
+            ],
+            "status": "PASSED"
+        },
+        {
+            "method": "simple",
+            "result": [
+                0,
+                [],
+                "Madrid",
+                {
+                    "city": "Madrid",
+                    "suburb": "Malasaña"
+                }
+            ],
+            "status": "PASSED"
+        }
+    ]
+}

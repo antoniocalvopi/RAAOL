@@ -1,0 +1,28 @@
+# Django
+Django>=4.2
+psycopg2-binary>=2.9.5
+djangorestframework
+
+
+
+# Web scraping y automatización
+requests>=2.25.1
+beautifulsoup4>=4.12.2
+lxml>=4.9.3
+selenium>=4.21.0
+undetected-chromedriver>=3.2.6
+playwright>=1.35.0
+fake-useragent>=0.1.11
+
+# Logging
+loguru>=0.7.0
+
+# Testing
+pytest>=7.0.0
+pytest-django>=4.5.2  # Opcional
+
+# Otros 
+serpapi
+python-dotenv>=1.0.1
+sentence-transformers
+numpy

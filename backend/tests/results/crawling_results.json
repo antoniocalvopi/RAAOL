@@ -1,0 +1,122 @@
+{
+    "summary": {
+        "total_tests": 7,
+        "passed": 7,
+        "failed": 0,
+        "success_rate": "100.00 %"
+    },
+    "details": [
+        {
+            "test_id": 1,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-merida-badajoz/merida-543793932.htm",
+            "expected": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": true
+            },
+            "obtained": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": true,
+                "plataforma": "Milanuncios"
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 2,
+            "url": "http://example2.com",
+            "expected": {
+                "plat": false,
+                "val": false,
+                "conexion_ok": false
+            },
+            "obtained": {
+                "plat": false,
+                "val": false,
+                "conexion_ok": false,
+                "plataforma": null
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 3,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-merida-badajoz/",
+            "expected": {
+                "plat": true,
+                "val": false,
+                "conexion_ok": true
+            },
+            "obtained": {
+                "plat": true,
+                "val": false,
+                "conexion_ok": true,
+                "plataforma": "Milanuncios"
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 4,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-merida-badajoz/merida-526344594.htm",
+            "expected": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": true
+            },
+            "obtained": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": true,
+                "plataforma": "Milanuncios"
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 5,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-merida-badajoz/merida-526344593.htm",
+            "expected": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": false
+            },
+            "obtained": {
+                "plat": true,
+                "val": true,
+                "conexion_ok": false,
+                "plataforma": "Milanuncios"
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 6,
+            "url": "https://www.fotocasa.com/alquiler-de-pisos-en-merida-badajoz/merida-526344593.htm",
+            "expected": {
+                "plat": false,
+                "val": false,
+                "conexion_ok": false
+            },
+            "obtained": {
+                "plat": false,
+                "val": false,
+                "conexion_ok": false,
+                "plataforma": null
+            },
+            "status": "passed ✅"
+        },
+        {
+            "test_id": 7,
+            "url": "https://www.idealista.com/alquiler-de-pisos-en-merida-badajoz/merida-526344593.htm",
+            "expected": {
+                "plat": true,
+                "val": false,
+                "conexion_ok": false
+            },
+            "obtained": {
+                "plat": true,
+                "val": false,
+                "conexion_ok": false,
+                "plataforma": "Idealista"
+            },
+            "status": "passed ✅"
+        }
+    ]
+}

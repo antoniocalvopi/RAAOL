@@ -1,0 +1,41 @@
+[
+  {
+    "url": "https://www.milanuncios.com/alquiler-de-pisos-en-barcelona-barcelona/barcelona-capital-549092916.htm",
+    "clases_objetivo": {
+      "titulo": "ma-SharedText ma-AdDetail-title ma-AdDetail-title-size-heading-m ma-AdDetail-title ma-SharedText--m ma-SharedText--black",
+      "precio": "ma-AdPrice-value",
+      "descripcion": "ma-AdDetail-description",
+      "ubicacion": "ma-SharedText ma-AdLocation-text ma-SharedText--s ma-SharedText--gray"
+    },
+    "expected_vector": {
+      "titulo": "Barcelona Capital",
+      "precio": "1.750€"
+    }
+  },
+  {
+    "url": "https://www.milanuncios.com/alquiler-de-pisos-en-santiago-de-compostela-la_coruna/santiago-de-compostela-546773715.htm",
+    "clases_objetivo": {
+      "titulo": "ma-SharedText ma-AdDetail-title ma-AdDetail-title-size-heading-m ma-AdDetail-title ma-SharedText--m ma-SharedText--black",
+      "precio": "ma-AdPrice-value",
+      "descripcion": "ma-AdDetail-description",
+      "ubicacion": "ma-SharedText ma-AdLocation-text ma-SharedText--s ma-SharedText--gray"
+    },
+    "expected_vector": {
+      "titulo": "Santiago de Compostela",
+      "precio": "850€"
+    }
+  },
+  {
+    "url": "https://www.milanuncios.com/alquiler-de-pisos-en-barcelona-barcelona/barcelona-capital-549244771.htm",
+    "clases_objetivo": {
+      "titulo": "ma-SharedText ma-AdDetail-title ma-AdDetail-title-size-heading-m ma-AdDetail-title ma-SharedText--m ma-SharedText--black",
+      "precio": "ma-AdPrice-value",
+      "descripcion": "ma-AdDetail-description",
+      "ubicacion": "ma-SharedText ma-AdLocation-text ma-SharedText--s ma-SharedText--gray"
+    },
+    "expected_vector": {
+      "titulo": "Barcelona Capital",
+      "precio": "3.600€"
+    }
+  }
+]

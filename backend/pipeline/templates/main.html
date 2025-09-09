@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R.A.A.O.L</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body {
+    background-color: #0a0a0f;
+    color: #00ff99;
+    font-family: "Fira Code", monospace;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
+  }
+  .form-container {
+    background: rgba(10, 10, 20, 0.9);
+    border: 1px solid #00ff99;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  input.form-control {
+    background-color: #0d0d14;
+    border: 1px solid #00ff99;
+    color: #00ff99 !important;
+    font-family: "Fira Code", monospace;
+  }
+  input.form-control:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 6px #00ffff;
+    background-color: #0d0d14;
+  }
+  input.form-control::placeholder {
+    color: #00ff997d;
+  }
+  .btn-primary {
+    background: #00b386;
+    border: 1px solid #00ffcc;
+    color: #0a0a0f;
+    font-weight: bold;
+    font-family: "Fira Code", monospace;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  .btn-primary:hover {
+    background: #00cc99;
+    transform: translateY(-2px);
+  }
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 50vh;
+  }
+  #resultado, #graphPanel {
+    background: #0d0d14;
+    border: 1px solid #00ff99;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+    min-height: 200px;
+    position: relative;
+  }
+  #resultado {
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+  }
+  #graphCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  #graphPlaceholder {
+    text-align: center;
+    color: #00ffcc;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 30%;
+    animation: glowPulse 2s infinite;
+  }
+  @keyframes glowPulse {
+    0%,100% { text-shadow:0 0 5px #00ffcc,0 0 10px #00ffcc; opacity:1; }
+    50% { text-shadow:0 0 20px #00ffaa,0 0 40px #00ffaa; opacity:0.5; }
+  }
+</style>
+</head>
+<body>
+<div class="container mt-4">
+  <h1>⟦ R.A.A.O.L ⟧</h1>
+
+  <div class="form-container">
+    <form id="pipelineForm">
+      <div class="mb-3">
+        <label for="url" class="form-label">URL del anuncio</label>
+        <input type="url" class="form-control" id="url" placeholder="https://objetivo.com" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Ejecutar</button>
+    </form>
+  </div>
+
+  <div class="results-grid">
+    <div id="resultado">Esperando entrada...</div>
+    <div id="graphPanel">
+      <div id="graphPlaceholder"></div>
+      <canvas id="graphCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= TIPO MÁQUINA DE ESCRIBIR ================= */
+async function typeLine(line, container, delay = 45) {
+  for (let i = 0; i < line.length; i++) {
+    container.innerText += line[i];
+    container.scrollTop = container.scrollHeight;
+    await new Promise(r => setTimeout(r, delay));
+  }
+  container.innerText += "\n";
+  container.scrollTop = container.scrollHeight;
+}
+
+/* ================= PLACEHOLDER ANIMADO UNA VEZ ================= */
+async function typePlaceholderOnce() {
+  const placeholder = document.getElementById("graphPlaceholder");
+  const text = "⟦ En espera de ejecución... ⟧";
+  placeholder.style.display = "block";
+  placeholder.textContent = "";
+  for (let i = 0; i < text.length; i++) {
+    placeholder.textContent += text[i];
+    await new Promise(r => setTimeout(r, 50));
+  }
+}
+
+/* ================= GRAFO ================= */
+const canvas = document.getElementById("graphCanvas");
+const panel = document.getElementById("graphPanel");
+const ctx = canvas.getContext("2d");
+let width, height, particles = [];
+
+const options = {
+  num: 50,
+  particle: { color: 'rgba(64,255,64,0.6)', szMin: 0.5, szMax: 1, spMin: 0.05, spMax: 0.5 },
+  link: { color: 'rgba(128,255,128,0.3)', maxDist: 160 }
+};
+
+class Particle {
+  constructor() {
+    this.p = { x: Math.random() * width, y: Math.random() * height };
+    this.s = options.particle.spMin + Math.random() * options.particle.spMax;
+    this.r = options.particle.szMin + Math.random() * options.particle.szMax;
+    this.d = Math.random() * Math.PI * 2;
+    this.v = { x: Math.cos(this.d) * this.s, y: Math.sin(this.d) * this.s };
+  }
+  update() { this.p.x += this.v.x; this.p.y += this.v.y; this.wrap(); }
+  wrap() {
+    if(this.p.x<0||this.p.x>width||this.p.y<0||this.p.y>height) this.setDir(this.d+Math.random()*Math.PI/36);
+    if(this.p.x<0) this.p.x+=width; if(this.p.x>width) this.p.x-=width;
+    if(this.p.y<0) this.p.y+=height; if(this.p.y>height) this.p.y-=height;
+  }
+  setDir(d){ this.d=d; this.v.x=Math.cos(d)*this.s; this.v.y=Math.sin(d)*this.s; }
+  draw(){ ctx.beginPath(); ctx.arc(this.p.x,this.p.y,this.r,0,Math.PI*2); ctx.fillStyle=options.particle.color; ctx.fill(); }
+  closeTo(other){ let xd=other.p.x-this.p.x, yd=other.p.y-this.p.y; return (xd*xd+yd*yd)<(options.link.maxDist*options.link.maxDist); }
+  drawLink(other){ ctx.save(); ctx.globalAlpha=1-(this.distanceTo(other)/options.link.maxDist); ctx.beginPath(); ctx.moveTo(this.p.x,this.p.y); ctx.lineTo(other.p.x,other.p.y); ctx.strokeStyle=options.link.color; ctx.stroke(); ctx.restore(); }
+  distanceTo(other){ let xd=other.p.x-this.p.x, yd=other.p.y-this.p.y; return Math.sqrt(xd*xd+yd*yd); }
+}
+
+function initParticles(){ particles=Array.from({ length: options.num }, () => new Particle()); }
+
+function resizeCanvas() {
+  width = panel.clientWidth;
+  height = panel.clientHeight;
+  canvas.width = width;
+  canvas.height = height;
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  particles.forEach(p => { p.p.x = Math.min(p.p.x, width); p.p.y = Math.min(p.p.y, height); });
+}
+window.addEventListener('resize', resizeCanvas);
+
+function animate() {
+  ctx.clearRect(0,0,width,height);
+  particles.forEach(a => {
+    a.update();
+    a.draw();
+    particles.forEach(b => { if(a!==b && a.closeTo(b)) a.drawLink(b); });
+  });
+  requestAnimationFrame(animate);
+}
+
+function startGraphAnimation() {
+  canvas.style.display = "block";
+  document.getElementById("graphPlaceholder").style.display = "none";
+  resizeCanvas();
+  initParticles();
+  animate();
+}
+
+/* ================= PIPELINE STREAM ================= */
+document.getElementById('pipelineForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const url = document.getElementById('url').value;
+  const resultadoDiv = document.getElementById('resultado');
+  resultadoDiv.innerText = "";
+
+  startGraphAnimation();
+
+  try {
+    const response = await fetch(`/api/pipeline/stream?url=${encodeURIComponent(url)}`);
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+
+    let buffer = "";
+
+    while(true){
+      const {done, value} = await reader.read();
+      if(done) break;
+      const chunk = decoder.decode(value, {stream:true});
+      buffer += chunk;
+
+      let lines = buffer.split("\n");
+      buffer = lines.pop();
+
+      for (let line of lines) {
+        // Detectar la URL final de resultados
+        if (line.startsWith("Resultados generados:")) {
+          const resultadosURL = line.replace("Resultados generados:", "").trim();
+          resultadoDiv.innerHTML += `<br>>> [*/*]Resultados generados: <a href="${resultadosURL}" target="_blank">resultados.txt</a>`;
+          continue;
+        }
+
+        if (line.startsWith(">> [")) {
+          resultadoDiv.innerText += line + "\n";
+          resultadoDiv.scrollTop = resultadoDiv.scrollHeight;
+        } else {
+          await typeLine(line, resultadoDiv, 15);
+        }
+      }
+    }
+
+  } catch(err) {
+    resultadoDiv.innerText = `!! Error: ${err}`;
+  }
+});
+
+/* ================= INICIAR PLACEHOLDER ================= */
+typePlaceholderOnce();
+</script>
+</body>
+</html>

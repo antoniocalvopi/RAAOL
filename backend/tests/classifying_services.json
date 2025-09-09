@@ -1,0 +1,26 @@
+[
+  {
+    "vector": {
+      "precio": "50000€",
+      "descripcion": "Oportunidad única, sin visitas, paga ya.",
+      "ubicacion": "Madrid"
+    },
+    "expected_level": "alta"
+  },
+  {
+    "vector": {
+      "precio": "120000€",
+      "descripcion": "Bonito piso reformado con terraza",
+      "ubicacion": "Barcelona"
+    },
+    "expected_level": "alta"
+  },
+  {
+    "vector": {
+      "precio": "500€",
+      "descripcion": "Estudio pequeño bien comunicado",
+      "ubicacion": "Valencia"
+    },
+    "expected_level": "baja"
+  }
+]

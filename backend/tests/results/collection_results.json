@@ -1,0 +1,37 @@
+{
+    "summary": {
+        "total_tests": 3,
+        "passed": 3,
+        "failed": 0,
+        "success_rate": "100.00 %"
+    },
+    "details": [
+        {
+            "test": 1,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-merida-badajoz/merida-543793932.htm",
+            "html_length": 930771,
+            "images_count": 11,
+            "min_length_required": 2000,
+            "min_images_required": null,
+            "result": "✅ PASSED"
+        },
+        {
+            "test": 2,
+            "url": "http://example2.com",
+            "html_length": 15500,
+            "images_count": 0,
+            "min_length_required": 1500,
+            "min_images_required": null,
+            "result": "✅ PASSED"
+        },
+        {
+            "test": 3,
+            "url": "https://www.milanuncios.com/alquiler-de-pisos-en-santiago-de-compostela-la_coruna/santiago-de-compostela-546669889.htm",
+            "html_length": 1277754,
+            "images_count": 0,
+            "min_length_required": 68,
+            "min_images_required": null,
+            "result": "✅ PASSED"
+        }
+    ]
+}

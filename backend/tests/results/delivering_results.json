@@ -1,0 +1,42 @@
+{
+    "summary": {
+        "total": 3,
+        "passed": 3,
+        "success_rate": 100.0
+    },
+    "details": [
+        {
+            "ide": "20250617_095158",
+            "url": "http://localhost:8001/api/deliver/20250617_095158/",
+            "status_code": 200,
+            "status": "PASSED ✅",
+            "checks": {
+                "status_ok": true,
+                "contains_interpretacion": true,
+                "contains_caracteristicas": true
+            }
+        },
+        {
+            "ide": "20250617_122833",
+            "url": "http://localhost:8001/api/deliver/20250617_122833/",
+            "status_code": 200,
+            "status": "PASSED ✅",
+            "checks": {
+                "status_ok": true,
+                "contains_interpretacion": true,
+                "contains_caracteristicas": true
+            }
+        },
+        {
+            "ide": "20250619_122833",
+            "url": "http://localhost:8001/api/deliver/20250619_122833/",
+            "status_code": 200,
+            "status": "PASSED ✅",
+            "checks": {
+                "status_ok": true,
+                "contains_interpretacion": true,
+                "contains_caracteristicas": true
+            }
+        }
+    ]
+}
